@@ -28,8 +28,8 @@ This project analyzes customer data from TelCom Solutions to predict customer ch
 - Churn prediction with classification models
 - Model evaluation and result interpretation
 
-## Technologies
-Python (Jupyter Notebook), pandas, NumPy, scikit-learn, seaborn, matplotlib
+## Libraries
+pandas, NumPy, scikit-learn, seaborn, matplotlib
 
 ## Results
 Built churn prediction models and provided actionable insights for customer retention.
