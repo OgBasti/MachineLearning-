@@ -1,48 +1,44 @@
-# Stroke Prediction – Machine Learning Classification Project
+# Enhancing Stroke Prevention with Machine Learning: A Business Case for Insurance RPM
 
-This repository contains a machine learning classification project focused on predicting the likelihood of stroke occurrence using patient health data.
+This project analyzes clinical and symptom data to predict stroke risk and identify high-risk individuals using machine learning. The objective is to support proactive healthcare and insurance remote patient monitoring (RPM) by enabling early interventions and data-driven decision-making.
 
 ## Overview
+- **Goal:** Develop predictive models to assess individual stroke risk, identify at-risk patients, and provide actionable insights for healthcare and insurance applications, particularly focusing on integration with RPM systems.
+- **Data:** Clinical dataset comprising patient demographics, 15 binary symptom indicators, stroke risk percentages, and binary at-risk classification, curated based on medical literature and expert guidance.
 
-- **Goal:** Build and evaluate classification models to predict stroke based on clinical and demographic features.
-- **Project Context:** Conducted as part of a group assignment involving preprocessing, model selection, and performance evaluation using scikit-learn.
-
-## Main Data Features
-
-| Feature             | Description                                     |
-|---------------------|-------------------------------------------------|
-| gender              | Gender of the patient                           |
-| age                 | Age in years                                    |
-| hypertension        | Whether the patient has hypertension            |
-| heart_disease       | Whether the patient has heart disease           |
-| ever_married        | Marital status                                  |
-| work_type           | Type of employment                              |
-| Residence_type      | Urban or rural residence                        |
-| avg_glucose_level   | Average glucose level                           |
-| bmi                 | Body Mass Index                                 |
-| smoking_status      | Smoking habits                                  |
-| stroke              | Target variable (1 = stroke, 0 = no stroke)     |
-
-*(See notebook for complete preprocessing and feature engineering steps.)*
+## Main Features in Data
+| Feature                     | Description                                                    |
+|-----------------------------|----------------------------------------------------------------|
+| Age                         | Patient age (major risk factor)                                |
+| Binary Symptoms             | Presence/absence of key symptoms such as chest pain, fatigue, dizziness, etc. |
+| Stroke Risk (%)              | Continuous risk score representing probability of stroke       |
+| At Risk (Binary)             | Binary indicator if stroke risk > 50%                           |
 
 ## Workflow
+- Exploratory Data Analysis (EDA) to understand feature distributions and correlations
+- Unsupervised Learning via clustering to identify patient subgroups based on symptoms and risk profiles
+- Development of Regression models to predict stroke risk as a continuous variable, including symptom-driven and age-adjusted approaches
+- Development of Classification models (Logistic Regression, Random Forest, Gradient Boosting) focusing on maximizing recall to reduce missed stroke cases
+- Model interpretation and feature importance analysis using SHAP and LIME explainability tools
+- Business and clinical recommendations for integration into RPM systems and insurance risk stratification
 
-- Load and clean the dataset
-- Handle missing values and encode categorical variables
-- Perform feature selection and standardization
-- Train multiple classification models (e.g., Logistic Regression, Random Forest, etc.)
-- Evaluate model performance using accuracy, precision, recall, F1-score, and AUC
+## Libraries
+pandas, NumPy, scikit-learn, SHAP, LIME, matplotlib, seaborn
 
-## Data Source
+## Key Results
+- Identified three meaningful patient clusters differentiated by symptom prevalence and stroke risk levels
+- Developed a symptom-focused Random Forest Regression model achieving R² = 0.42 without using age, enhancing clinical interpretability
+- Gradient Boosting classifier chosen for stroke detection due to highest recall (0.91), prioritizing minimizing false negatives in a medical context
+- Key symptoms influencing stroke risk prediction include chest pain, fatigue, high blood pressure, cold hands/feet, and excessive sweating
+- Actionable recommendations include incorporating symptom-based digital scoring, wearable patient monitoring, and continuous model validation to support preventive care and insurance RPM integration
 
-Data sourced from the [Kaggle Stroke Prediction Dataset](https://www.kaggle.com/datasets/fedesoriano/stroke-prediction-dataset), based on real patient records.
-
-## Results
-
-- Best-performing models identified based on cross-validation scores and evaluation metrics
-- Feature importance explored and interpreted
-- Limitations and suggestions for future improvements discussed
+## Limitations and Future Work
+- Real-world clinical data complexity (noise, missing values) not fully modeled
+- Potential demographic biases affecting generalization and fairness across age groups
+- Lack of temporal symptom progression data limits dynamic risk prediction
+- Future research should include validating models on real-world datasets, incorporating time-series features, and ensuring equitable performance across populations
 
 ---
 
-_See the notebook (`group_Y_stroke_prediction.ipynb`) for full code, results, and explanations._
+*See the full report and appendix for detailed analyses, visualizations, methodology, and references.*
+
