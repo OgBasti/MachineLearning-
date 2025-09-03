@@ -1,4 +1,4 @@
-# Assignment 1 – TelCom Solutions Churn Crisis
+# TelCom Solutions Churn Crisis
 
 This project analyzes customer data from TelCom Solutions to predict customer churn using machine learning.
 
