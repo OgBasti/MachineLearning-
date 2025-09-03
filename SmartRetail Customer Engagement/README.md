@@ -1,4 +1,4 @@
-# Assignment 2 – SmartRetail Customer Engagement Challenge
+# SmartRetail Customer Engagement Challenge
 
 This project analyzes SmartRetail’s customer transaction data to uncover purchase patterns, segment customers, predict loyalty, and build personalized recommendation models using machine learning.
 
